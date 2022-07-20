@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <!------------------- HEADER -------------------->
     <header class = "top-info">
         <h2 id="highscores">View highscores</h2>
         <h2 id="timer">Time left: </h2>
     </header>
-    <div class="start-container">
+    <!------------------ START PAGE ----------------->
+    <main class="start-container">
         <div class="intro">
             <h1 class = "intro-title">Coding Quiz Challenge</h1>
             <p class="intro-text">You have 75 seconds to try to get the highest score by answering five series of JavaScript questions. Incorrect answers will penalize your time by ten seconds. Your total score will be your time after you answer the last question. Click start when you are ready.</p>
@@ -20,7 +22,8 @@
         <div class="start-button">
             <button id="start" class="btn">Start Quiz</button>
         </div>
-    </div>
+    </main>
+    <!------------------ QUIZ PAGE ----------------->
     <div class="quiz-container">
         <h1 class = "question">What does HTML stand for?</h1>
         <div class="answers">
@@ -32,6 +35,22 @@
         <div class="result"><h2 class = "correct">Correct! &#9989;</h2>
             <!-- <h2 class = "incorrect">Incorrect!	&#10060;</h2> --></div>
     </div>
+    <!-------------- END OF QUIZ PAGE -------------->
+    <div class="end-container">
+        <h1 class = "heading">&#127881; All done! &#127881;</h1>
+        <p class="message">Your final score is: <p class="score"></p></p>
+        <div class="submit-score">
+            <p>Enter name: </p>
+            <form action="#">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <!-------------- VIEW HIGHSCORES -------------->
+    <div class="highscores-container">
+    </div>
+
     <script src="./assets/script.js"></script>
   </body>
 </html>

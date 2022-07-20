@@ -118,8 +118,8 @@ header #timer {
     justify-content: center;
 }
 
-.quiz-container h1 {
-
+.quiz-container {
+    display: none;
 }
 
 .quiz-container .result {
@@ -154,4 +154,45 @@ header #timer {
 .option:hover {
     border: 2px solid black;
     padding: 11px 30px;
+}
+
+/**********************************************/
+/**** END CONTAINER ****************************/
+
+.end-container{
+/*     background: grey; */
+    width: 700px;
+    height: calc(100vh - 350px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-score {
+    display: flex;
+    flex-direction: row;
+}
+
+.end-container .heading {
+    padding: 25px 80px;
+    line-height: 38px;
+    font-size: 40px;
+} 
+
+.end-container .message {
+/*     background-color: cornflowerblue; */
+    width: inherit;
+    padding: 25px 70px;
+    line-height: 38px;
+    font-size: 30px;
+} 
+
+.submit-score {
+    
+}
+
+.submit-score p {
+    font-size: 18px;
+    justify-content: left;
 }
