@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class = "top-info">
-        <h2 id="highscores">Highscore: </h2>
+    <header class = "top-info">
+        <h2 id="highscores">Highscores: </h2>
         <h2 id="countdown">Time left: </h2>
+    </header>
+    <div class="start-container">
+        <div class="intro">
+            <h1 class = "intro-title">Coding Quiz Challenge</h1>
+            <p class="intro-text">You have 75 seconds to try to get the highest score by answering five series of JavaScript questions. Incorrect answers will penalize your time by ten seconds. Your total score will be your time after you answer the last question. Click start when you are ready.</p>
+        </div>
+        <div class="buttons">
+            <button id="start" class="btn">Start Quiz</button>
+        </div>
     </div>
-    <div class="intro">
-        <h1 class = "intro-title">Coding Quiz Challenge</h1>
-        <p class="intro-text">Some text here</p>
-    </div>
-    <div class="buttons">
-        <button id="start" class="btn">Start Quiz</button>
-        <button id="next" class="btn hide">Previous</button>
-        <button id="next" class="btn hide">Next</button>
+    <div class="quiz-container">
+        <h1 class = "question">Some question</h1>
+        <div class="answers">
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+            <button class=""></button>
+        </div>
     </div>
     <script src="./assets/script.js"></script>
   </body>

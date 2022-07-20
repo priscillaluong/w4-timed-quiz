@@ -7,6 +7,30 @@
 
 body { 
     background-color: FFFCFB;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro .intro-title {
+    padding: 25px 30px;
+} 
+
+.buttons{
+
 }
 
 /* Start button styling */
