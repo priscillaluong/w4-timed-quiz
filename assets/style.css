@@ -24,15 +24,37 @@ header {
 }
 
 header h2 {
+/*     background-color: coral; */
     font-weight: 400;
     padding: 25px 35px;
 }
 
+header #timer {
+    background-color: lightblue;
+    font-weight: 400;
+    width: 220px;
+    padding: 20px 25px;
+    border-radius: 5px;
+    margin: 25px 25px;
+    text-align: left;
+}
+
+#highscores {
+    background-color:#FFFCFB;
+    padding: 20px 25px;
+    margin: 25px 25px;
+}
+
+#highscores:hover {
+    color: coral;
+    cursor: pointer;
+}
+
+
 /**********************************************/
 /**** START CONTAINER  ************************/
 
-.start-container,
-.quiz-container {
+.start-container {
 /*     background: grey; */
     width: 700px;
     height: calc(100vh - 140px);
@@ -86,14 +108,36 @@ header h2 {
 /**********************************************/
 /**** QUIZ CONTAINER  *************************/
 
-.quiz-container h1 {
+.quiz-container{
+/*     background: grey; */
+    width: 700px;
+    height: calc(100vh - 220px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
 
+.quiz-container h1 {
 
 }
 
-.answers {
+.quiz-container .result {
+    margin: 12px;
+    padding: 0px 30px;
+}
+
+/**********************************************/
+/**** QUIZ BUTTONS ****************************/
+
+.quiz-container .answers {
+/*     background-color: chocolate */;
+    width: 700px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 10px 30px;
 }
 
 .answers button {
@@ -104,4 +148,10 @@ header h2 {
     border: 1px solid black;
     cursor: pointer;
     margin: 10px;
+    text-align: start;
+}
+
+.option:hover {
+    border: 2px solid black;
+    padding: 11px 30px;
 }
