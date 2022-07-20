@@ -32,3 +32,18 @@ function displayMessage() {
 
 // Add event listener to start button
 startBtn.addEventListener("click", countdown);
+
+
+
+// HIGHSCORES - can we refer to the increment decrement activity to code this?
+
+if ()
+
+
+
+// we may need to use this to carry out another function after a form has been submitted. E.g. print amount
+event.preventDefault();
+
+// put each question into an array so we can go through the q's with an index
+
+
