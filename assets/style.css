@@ -12,7 +12,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
+/**********************************************/
+/**** HEADER **********************************/
 
 header {
     display: flex;
@@ -22,8 +25,11 @@ header {
 
 header h2 {
     font-weight: 400;
-    padding: 25px 30px;
+    padding: 25px 35px;
 }
+
+/**********************************************/
+/**** START CONTAINER  ************************/
 
 .start-container,
 .quiz-container {
@@ -47,7 +53,8 @@ header h2 {
     align-items: center;
 }
 
-.intro .intro-title {
+.intro .intro-title,
+.quiz-container h1 {
     padding: 25px 30px;
 } 
 .intro .intro-text {
@@ -56,11 +63,12 @@ header h2 {
     font-size: 20px;
 } 
 
+/**********************************************/
+/**** START BUTTON ****************************/
+
 .start-button{
     padding: 25px;
 }
-
-/* Start button styling */
 
 #start {
     font-size: 25px;
@@ -75,11 +83,25 @@ header h2 {
     background-color: #88D9EC;
 }
 
-.quiz-container {
-    /* display: none; */
+/**********************************************/
+/**** QUIZ CONTAINER  *************************/
+
+.quiz-container h1 {
+
+
 }
 
 .answers {
     display: flex;
     flex-direction: column;
+}
+
+.answers button {
+    font-size: 25px;
+    font-weight: 400;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 10px;
 }
