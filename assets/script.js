@@ -9,7 +9,7 @@ var quizContainer = document.querySelector(".quiz-container");
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
-    //countdown(); //run countdown function
+    countdown(); //run countdown function
     startContainer.setAttribute("style",  "display: none");
     quizContainer.setAttribute("style",  "display: flex");
 });
@@ -20,11 +20,11 @@ var quizContainer = document.querySelector(".quiz-container");
 // Functions
 
 function countdown() { 
-  var timeLeft = 5;
+  var timeLeft = 75;
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timeLeft--;
-    timerEl.textContent = "Time left " + timeLeft;
+    timerCountdown.textContent = "Time left: " + timeLeft;
 
     if (timeLeft === 0) {
       clearInterval(timeInterval);
