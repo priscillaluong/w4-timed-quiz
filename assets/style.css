@@ -57,15 +57,11 @@ header #timer {
 .start-container {
 /*     background: grey; */
     width: 700px;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 180px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.start-container {
-    display: none;
 }
 
 .intro {
@@ -112,14 +108,10 @@ header #timer {
 /*     background: grey; */
     width: 700px;
     height: calc(100vh - 220px);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-}
-
-.quiz-container {
-    display: none;
 }
 
 .quiz-container .result {
@@ -162,11 +154,15 @@ header #timer {
 .end-container{
 /*     background: grey; */
     width: 700px;
-    height: calc(100vh - 360px);
-    display: flex;
+    height: calc(100vh - 320px);
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.hide-end-container {
+    display: none;
 }
 
 .end-container .heading {
@@ -224,4 +220,9 @@ form #submit-btn {
     background-color: coral;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+form #submit-btn:hover {
+    background-color: lightseagreen;
 }
