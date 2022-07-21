@@ -1,6 +1,6 @@
 // Global variables
 
-var timerCountdown = document.querySelector("#timer");
+var timerCountdown = document.getElementById("timer");
 
 var startContainer = document.querySelector(".start-container"); 
 var startBtn = document.querySelector(".start-button #start");
@@ -14,14 +14,11 @@ startBtn.addEventListener("click", function() {
     quizContainer.setAttribute("style",  "display: flex");
 });
 
-var quizContainer = document.querySelector(".quiz-container");  
-//var timerEl = document.getElementById('countdown');
-
 // Functions
 
 function countdown() { 
   var timeLeft = 75;
-  // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  //`setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timeLeft--;
     timerCountdown.textContent = "Time left: " + timeLeft;
