@@ -6,6 +6,9 @@ var startContainer = document.querySelector(".start-container");
 var startBtn = document.querySelector(".start-button #start");
 var quizContainer = document.querySelector(".quiz-container"); 
 
+var endContainer = document.querySelector(".end-container");
+var timesUp = document.querySelector(".end-container .heading"); 
+
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -17,7 +20,7 @@ startBtn.addEventListener("click", function() {
 // Functions
 
 function countdown() { 
-  var timeLeft = 75;
+  var timeLeft = 5;
   //`setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timeLeft--;
@@ -32,7 +35,9 @@ function countdown() {
 
 // Displays the message
 function displayMessage() {
-    timerEl.textContent = "Time's up!";
+    timesUp.textContent = "Time's up!";
+    quizContainer.setAttribute("style",  "display: none");
+    endContainer.setAttribute("style",  "display: flex");
 }
 
 // Add event listener to start button
