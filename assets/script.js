@@ -9,6 +9,8 @@ var quizContainer = document.querySelector(".quiz-container");
 var endContainer = document.querySelector(".end-container");
 var timesUp = document.querySelector(".end-container .heading"); 
 
+var answerMessage = document.querySelector(".quiz-container .correctIncorrect");
+
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -94,18 +96,20 @@ var optionsBtn = document.getElementsByClassName("option");
 
 if (optionsBtn) {
   var questionsNum = 0;
+  
   for (var i = 0; optionsBtn.length; i++) {
   optionsBtn[i].addEventListener('click', function() {
   var userClicked = event.target.innerText;
   var correctAnswer = questionArr[questionsNum].answer;
+  
   if (userClicked === correctAnswer) {
-    console.log(userClicked);
-    console.log(questionArr[questionsNum].answer);
-    console.log("Correct");
+    answerMessage.textContent = "Correct! ✅";
+    event.target.setAttribute("style",  "background-color: #5BF873");
+    console.log(event.target);
   } else {
-    console.log("Wrong");
-    console.log(userClicked);
-    console.log(questionArr[questionsNum].answer);
+    answerMessage.textContent = "Incorrect!	❌";
+    event.target.setAttribute("style",  "background-color: #FC6262");
+    console.log(event.target);
   };
 
   questionsNum ++;
