@@ -11,18 +11,18 @@ var timesUp = document.querySelector(".end-container .heading");
 
 //if Start Button Clicked, the quiz and countdown is started
 
+function init() {
 startBtn.addEventListener("click", function() {
     countdown(); //run countdown function
     startContainer.setAttribute("style",  "display: none");
     quizContainer.setAttribute("style",  "display: flex");
     getQuestions(0);
-    getAnswers();
 });
-
+}
 // Functions
 
 function countdown() { 
-  var timeLeft = 5;
+  var timeLeft = 20;
   //`setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timeLeft--;
@@ -42,8 +42,7 @@ function displayMessage() {
     endContainer.setAttribute("style",  "display: flex");
 }
 
-// Add event listener to start button
-startBtn.addEventListener("click", countdown);
+
 
 
 
@@ -57,18 +56,47 @@ startBtn.addEventListener("click", countdown);
 //event.preventDefault();
 
 // put each question into an array so we can go through the q's with an index
-
 // Getting questions and answers from array 
 
 function getQuestions(index) {
   questionText = document.querySelector(".quiz-container .question"); 
   var question = questionArr[index].questions;
   questionText.textContent = question;
+
+  answerText1 = document.getElementById("1"); 
+  var option1 = questionArr[index].options[0];
+  answerText1.textContent = option1;
+
+  answerText2 = document.getElementById("2"); 
+  var option2 = questionArr[index].options[1];
+  answerText2.textContent = option2;
+
+  answerText3 = document.getElementById("3"); 
+  var option3 = questionArr[index].options[2];
+  answerText3.textContent = option3;
+
+  answerText4 = document.getElementById("4"); 
+  var option4 = questionArr[index].options[3];
+  answerText4.textContent = option4;
 }
 
-function getAnswers() {
-  answerText = document.querySelector(".quiz-container .answers"); 
-  var option = '<button class="option">' + questionArr[0].options[0] + '</button>' + '<button class="option">' + questionArr[0].options[1] + '</button>' + '<button class="option">' + questionArr[0].options[2] + '</button>' + '<button class="option">' + questionArr[0].options[3] + '</button>';
-  answerText.innerHTML = option;
+var questionsNum = 0;
+
+//If answer is clicked, move onto the next question:
+
+var optionsBtn = document.getElementsByClassName("option");
+// loop through collection of elements and addEventListener doesn't
+//work through array-like objects
+
+if (optionsBtn) {
+  for (var i = 0; optionsBtn.length; i++) {
+  optionsBtn[i].addEventListener('click', nextQue);
+};
 }
 
+ 
+function nextQue() {
+  console.log("Action worked");
+  questionsNum ++;
+  getQuestions(questionsNum);
+};

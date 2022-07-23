@@ -7,7 +7,7 @@
     <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
-  <body>
+  <body onload="init()">
     <!------------------- HEADER -------------------->
     <header class = "top-info">
         <a href="/highscores.html" id="highscores"><h2>View highscores</h2></a>
@@ -27,10 +27,10 @@
     <div class="quiz-container">
         <h1 class = "question"><!-- What does HTML stand for? --></h1>
         <div class="answers">
-            <button class="option">Answer 1</button>
-            <button class="option">Answer 2</button>
-            <button class="option">Answer 3</button>
-            <button class="option">Answer 4</button>
+            <button class="option" id="1">Answer 1</button>
+            <button class="option" id="2">Answer 2</button>
+            <button class="option" id="3">Answer 3</button>
+            <button class="option" id="4">Answer 4</button>
         </div>
         <div class="result"><h2 class = "correct"><!--Correct! &#9989;--></h2><h2 class = "wrong"><!--Correct! &#9989;--></h2>
             <!-- <h2 class = "incorrect">Incorrect!	&#10060;</h2> --></div>
@@ -50,7 +50,6 @@
     <!-------------- VIEW HIGHSCORES -------------->
     <div class="highscores-container">
     </div>
-
     <script src="./assets/script.js"></script>
     <script src="./assets/questions.js"></script>
   </body>
