@@ -22,7 +22,7 @@ startBtn.addEventListener("click", function() {
 // Functions
 
 function countdown() { 
-  var timeLeft = 20;
+  var timeLeft = 1000;
   //`setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timeLeft--;
@@ -80,8 +80,6 @@ function getQuestions(index) {
   answerText4.textContent = option4;
 }
 
-var questionsNum = 0;
-
 //If answer is clicked, move onto the next question:
 
 var optionsBtn = document.getElementsByClassName("option");
@@ -93,10 +91,9 @@ if (optionsBtn) {
   optionsBtn[i].addEventListener('click', nextQue);
 };
 }
+var questionsNum = 0;
 
- 
 function nextQue() {
-  console.log("Action worked");
   questionsNum ++;
   getQuestions(questionsNum);
 };
