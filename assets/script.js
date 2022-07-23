@@ -11,14 +11,13 @@ var timesUp = document.querySelector(".end-container .heading");
 
 //if Start Button Clicked, the quiz and countdown is started
 
-function init() {
 startBtn.addEventListener("click", function() {
     countdown(); //run countdown function
     startContainer.setAttribute("style",  "display: none");
     quizContainer.setAttribute("style",  "display: flex");
     getQuestions(0);
 });
-}
+
 // Functions
 
 function countdown() { 
@@ -86,14 +85,40 @@ var optionsBtn = document.getElementsByClassName("option");
 // loop through collection of elements and addEventListener doesn't
 //work through array-like objects
 
-if (optionsBtn) {
+/* if (optionsBtn) {
   for (var i = 0; optionsBtn.length; i++) {
   optionsBtn[i].addEventListener('click', nextQue);
+  console.log(event.target.innerText);
 };
-}
-var questionsNum = 0;
+} */
+
+if (optionsBtn) {
+  var questionsNum = 0;
+  for (var i = 0; optionsBtn.length; i++) {
+  optionsBtn[i].addEventListener('click', function() {
+  var userClicked = event.target.innerText;
+  var correctAnswer = questionArr[questionsNum].answer;
+  if (userClicked === correctAnswer) {
+    console.log(userClicked);
+    console.log(questionArr[questionsNum].answer);
+    console.log("Correct");
+  } else {
+    console.log("Wrong");
+    console.log(userClicked);
+    console.log(questionArr[questionsNum].answer);
+  };
+
+  questionsNum ++;
+  getQuestions(questionsNum);
+})}
+};
+
+// move onto next question and if answer was correct, display correct
+//if incorrect, display incorrect
+
+/* var questionsNum = 0;
 
 function nextQue() {
   questionsNum ++;
   getQuestions(questionsNum);
-};
+}; */

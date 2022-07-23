@@ -59,7 +59,7 @@ header #timer {
 /*     background: grey; */
     width: 700px;
     height: calc(100vh - 180px);
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -109,7 +109,7 @@ header #timer {
 /*     background: grey; */
     width: 700px;
     height: calc(100vh - 180px);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
