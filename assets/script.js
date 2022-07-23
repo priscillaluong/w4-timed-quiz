@@ -15,6 +15,8 @@ startBtn.addEventListener("click", function() {
     countdown(); //run countdown function
     startContainer.setAttribute("style",  "display: none");
     quizContainer.setAttribute("style",  "display: flex");
+    console.log(questionArr);
+    getQuestions();
 });
 
 // Functions
@@ -56,4 +58,12 @@ startBtn.addEventListener("click", countdown);
 
 // put each question into an array so we can go through the q's with an index
 
+// Getting questions and answers from array 
+
+function getQuestions() {
+  questionText = document.querySelector(".quiz-container .question"); 
+  var questions = questionArr[0].questions;
+  questionText.textContent = questions;
+  console.log(questions);
+}
 
