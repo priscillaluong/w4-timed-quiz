@@ -1,12 +1,10 @@
 // creating an array and passing the number, questions, options and answers
-var questionArr = [(num:)]
-
 
 var questionArr = [
   {
     numb: 1,
     questions: "1. Javascript is an _______ language?",
-    answer: "Object-Oriented"
+    answer: "Object-Oriented",
     options: [
       "Object-Oriented",
       "Object-Based",
@@ -17,7 +15,7 @@ var questionArr = [
   {
     numb: 2,
     questions: "2. Which of the following keywords is used to define a variable in Javascript?",
-    answer: "Both A and B"
+    answer: "Both A and B",
     options: [
       "var",
       "let",
@@ -28,7 +26,7 @@ var questionArr = [
   {
     numb: 3,
     questions: "3. Which of the following methods is used to access HTML elements using Javascript?",
-    answer: "Both A and B"
+    answer: "Both A and B",
     options: [
       "getElementbyId()",
       "getElementsByClassName()",
@@ -39,7 +37,7 @@ var questionArr = [
   {
     numb: 4,
     questions: "4. Upon encountering empty statements, what does the Javascript Interpreter do?",
-    answer: "Ignores the statements"
+    answer: "Ignores the statements",
     options: [
       "Throws an Error",
       "Ignores the statements",
@@ -50,7 +48,7 @@ var questionArr = [
   {
     numb: 5,
     questions: "5. Which of the following methods can be used to display data in some form using Javascript?",
-    answer: "All of the above"
+    answer: "All of the above",
     options: [
       "document.write()",
       "console.log()",
@@ -61,7 +59,7 @@ var questionArr = [
   {
     numb: 6,
     questions: "6. How can a datatype be declared to be a constant type?",
-    answer: "const"
+    answer: "const",
     options: [
       "const",
       "var",
@@ -72,7 +70,7 @@ var questionArr = [
   {
     numb: 7,
     questions: "7. Which of the following is not a Javascript framework?",
-    answer: "Cassandra"
+    answer: "Cassandra",
     options: [
       "Node",
       "Vue",

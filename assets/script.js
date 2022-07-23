@@ -15,8 +15,8 @@ startBtn.addEventListener("click", function() {
     countdown(); //run countdown function
     startContainer.setAttribute("style",  "display: none");
     quizContainer.setAttribute("style",  "display: flex");
-    console.log(questionArr);
-    getQuestions();
+    getQuestions(0);
+    getAnswers();
 });
 
 // Functions
@@ -60,10 +60,15 @@ startBtn.addEventListener("click", countdown);
 
 // Getting questions and answers from array 
 
-function getQuestions() {
+function getQuestions(index) {
   questionText = document.querySelector(".quiz-container .question"); 
-  var questions = questionArr[0].questions;
-  questionText.textContent = questions;
-  console.log(questions);
+  var question = questionArr[index].questions;
+  questionText.textContent = question;
+}
+
+function getAnswers() {
+  answerText = document.querySelector(".quiz-container .answers"); 
+  var option = '<button class="option">' + questionArr[0].options[0] + '</button>' + '<button class="option">' + questionArr[0].options[1] + '</button>' + '<button class="option">' + questionArr[0].options[2] + '</button>' + '<button class="option">' + questionArr[0].options[3] + '</button>';
+  answerText.innerHTML = option;
 }
 
