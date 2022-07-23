@@ -93,29 +93,40 @@ var optionsBtn = document.getElementsByClassName("option");
   console.log(event.target.innerText);
 };
 } */
+var questionsNum = 0;
 
-if (optionsBtn) {
-  var questionsNum = 0;
-  
-  for (var i = 0; optionsBtn.length; i++) {
-  optionsBtn[i].addEventListener('click', function() {
+for (var i = 0; optionsBtn.length; i++) 
+{
+  optionsBtn[i].addEventListener('click', function() 
+  {
   var userClicked = event.target.innerText;
   var correctAnswer = questionArr[questionsNum].answer;
-  
-  if (userClicked === correctAnswer) {
+
+  if (userClicked === correctAnswer) 
+  {
     answerMessage.textContent = "Correct! ✅";
     event.target.setAttribute("style",  "background-color: #5BF873");
     console.log(event.target);
   } else {
     answerMessage.textContent = "Incorrect!	❌";
     event.target.setAttribute("style",  "background-color: #FC6262");
+/*     highlight(); */
     console.log(event.target);
   };
-
   questionsNum ++;
   getQuestions(questionsNum);
-})}
+  })
 };
+
+/* function highlight() {
+  for (var i = 0; optionsBtn.length; i++) {
+    if (optionsBtn[i].innerHTML === correctAnswer) {
+      optionsBtn[i].setAttribute("style",  "background-color: #5BF873");
+    };
+  };
+}; */
+
+
 
 // move onto next question and if answer was correct, display correct
 //if incorrect, display incorrect
