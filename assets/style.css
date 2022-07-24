@@ -236,3 +236,22 @@ form #submit-btn:hover {
 /**********************************************/
 /**** HIGHSCORES HTML PAGE ********************/
 
+.scores-container {
+    background: grey;
+    width: 700px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scores-buttons #clear,
+.scores-buttons #toHomebtn {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}

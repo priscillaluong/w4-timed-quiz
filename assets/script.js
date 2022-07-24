@@ -13,8 +13,11 @@ var answerMessage = document.querySelector(".quiz-container .correctIncorrect");
 
 var scoreResult = document.querySelector(".end-container .message");
 
-var scoreResult = document.querySelector(".end-container .message");
+var highscoreName = document.querySelector(".end-container #name");
+var submitBtn = document.querySelector(".end-container #submit-btn");
 
+var scoresBoardName = document.querySelector(".scores-board .scoreName");
+var scoresBoardResult = document.querySelector(".scores-board .scoreResult");
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -27,7 +30,7 @@ startBtn.addEventListener("click", function() {
 // Functions
 
 var timeLeft = 75;
-var timeInterval = "";
+var timeInterval;
 function countdown() { 
   //`setInterval()` method to call a function to be executed every 1000 milliseconds
   timeInterval = setInterval(function () {
@@ -154,8 +157,21 @@ for (var i = 0; optionsBtn.length; i++)
 //calc highscore
 
 function saveHighscore() {
+  // if submit button clicked
+  submitBtn.addEventListener("click", function() {
   localStorage.setItem("latestScore", timeLeft);
+  localStorage.setItem("latestName", highscoreName.value);
   var savedScore = localStorage.getItem("latestScore");
+  var savedName = localStorage.getItem("latestName");
+  console.log(highscoreName.value);
+  if (highscoreName.value = "") {
+    console.log("Please enter name");
+  } else {
+    console.log(savedName + savedScore);
+    scoresBoardName.textContent = savedName;
+    scoresBoardResult.textContent = savedScore;
+  }
+});
 }
 
 
