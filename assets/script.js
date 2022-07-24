@@ -11,6 +11,10 @@ var timesUp = document.querySelector(".end-container .heading");
 
 var answerMessage = document.querySelector(".quiz-container .correctIncorrect");
 
+var scoreResult = document.querySelector(".end-container .message");
+
+var scoreResult = document.querySelector(".end-container .message");
+
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -22,17 +26,21 @@ startBtn.addEventListener("click", function() {
 
 // Functions
 
+var timeLeft = 75;
+var timeInterval = "";
 function countdown() { 
-  var timeLeft = 1000;
   //`setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     timeLeft--;
     timerCountdown.textContent = "Time left: " + timeLeft;
 
     if (timeLeft === 0) {
       clearInterval(timeInterval);
       displayMessage();
+      saveHighscore();
     }
+
+
   }, 1000);
 }
 
@@ -122,9 +130,10 @@ for (var i = 0; optionsBtn.length; i++)
     } else {
       answerMessage.textContent = "Incorrect!	❌";
       event.target.setAttribute("style", "background-color: #FC6262");
-  /*     highlight(); */
+      timeLeft = timeLeft - 8;
       console.log(event.target);
     };
+  // move onto next question
   // when questions end, show last page 
     setTimeout(function(){
       if (questionsNum < questionArr.length - 1) {
@@ -134,27 +143,19 @@ for (var i = 0; optionsBtn.length; i++)
       } else {
         quizContainer.setAttribute("style",  "display: none");
         endContainer.setAttribute("style",  "display: flex");
+        clearInterval(timeInterval);
+        scoreResult.textContent = "Your final score is: " + timeLeft;
+        saveHighscore();
       };
-    }, 800);
+    }, 500);
   })
 };
 
-/* function highlight() {
-  for (var i = 0; optionsBtn.length; i++) {
-    if (optionsBtn[i].innerHTML === correctAnswer) {
-      optionsBtn[i].setAttribute("style",  "background-color: #5BF873");
-    };
-  };
-}; */
+//calc highscore
+
+function saveHighscore() {
+  localStorage.setItem("latestScore", timeLeft);
+  var savedScore = localStorage.getItem("latestScore");
+}
 
 
-
-// move onto next question and if answer was correct, display correct
-//if incorrect, display incorrect
-
-/* var questionsNum = 0;
-
-function nextQue() {
-  questionsNum ++;
-  getQuestions(questionsNum);
-}; */

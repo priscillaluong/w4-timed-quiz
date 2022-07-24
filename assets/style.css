@@ -108,7 +108,7 @@ header #timer {
 .quiz-container{
 /*     background: grey; */
     width: 700px;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 185px);
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -184,10 +184,10 @@ header #timer {
 .end-container .message {
 /*     background-color: cornflowerblue; */
     width: inherit;
-    padding: 30px 120px 25px 120px;
+    padding: 30px 165px 25px 165px;
     margin-top: 20px;
     line-height: 23px;
-    font-size: 34px;
+    font-size: 38px;
 } 
 
 .submit-score {
