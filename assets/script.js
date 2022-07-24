@@ -147,7 +147,7 @@ for (var i = 0; optionsBtn.length; i++)
         quizContainer.setAttribute("style",  "display: none");
         endContainer.setAttribute("style",  "display: flex");
         clearInterval(timeInterval);
-        timerCountdown.textContent = "Time left: --";
+        timerCountdown.textContent = "Time left: ---";
         scoreResult.textContent = "Your final score is: " + timeLeft;
         saveHighscore();
       };
@@ -167,23 +167,32 @@ function saveHighscore() {
   var savedScore = localStorage.getItem("latestScore");
   var savedName = localStorage.getItem("latestName");
 
-  console.log(highscoreName.value);
+/*   console.log(highscoreName.value); */
 
   if (highscoreName.value = null) {
     console.log("Please enter name");
   } else {
-    console.log(savedName + savedScore);
 
     var liName = document.createElement("li");
-    liName.textContent = savedName;
-
+    liName.textContent = "hello";
+  /*     liName.textContent = savedName; */
+    console.log(savedName);
+    
     var liScore = document.createElement("li");
-    liScore.textContent = savedScore;
-
+  /*     liScore.textContent = savedScore; */
+    liScore.textContent = "test";
+    console.log(savedScore);
+    console.log(scoresBoardName);
+    console.log(scoresBoardResult);
+    
     scoresBoardResult.appendChild(liScore);
     scoresBoardName.appendChild(liName);
   }
 });
 }
+
+function renderScores() {
+
+};
 
 
