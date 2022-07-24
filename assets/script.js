@@ -105,19 +105,25 @@ for (var i = 0; optionsBtn.length; i++)
   if (userClicked === correctAnswer) 
   {
     answerMessage.textContent = "Correct! ✅";
-    event.target.setAttribute("style",  "background-color: #5BF873");
+    event.target.setAttribute("style", "background-color: #5BF873");
     console.log(event.target);
   } else {
     answerMessage.textContent = "Incorrect!	❌";
-    event.target.setAttribute("style",  "background-color: #FC6262");
+    event.target.setAttribute("style", "background-color: #FC6262");
 /*     highlight(); */
     console.log(event.target);
   };
-  questionsNum ++;
-  getQuestions(questionsNum);
+
+  if (questionsNum < questionArr.length - 1) {
+    questionsNum ++;
+    getQuestions(questionsNum);
+  } else {
+    quizContainer.setAttribute("style",  "display: none");
+    endContainer.setAttribute("style",  "display: flex");
+  }
   })
 };
-
+event.target.setAttribute("style", "background-color: none");
 /* function highlight() {
   for (var i = 0; optionsBtn.length; i++) {
     if (optionsBtn[i].innerHTML === correctAnswer) {
