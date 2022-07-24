@@ -237,13 +237,58 @@ form #submit-btn:hover {
 /**** HIGHSCORES HTML PAGE ********************/
 
 .scores-container {
-    background: grey;
+/*     background: grey; */
     width: 700px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.scores-container h1 {
+    padding: 90px 80px 10px 80px;
+    line-height: 38px;
+    font-size: 40px;
+    width: 600px;
+    text-align: center;
+}
+
+.scores-container p {
+    padding: 0 80px 20px 80px;
+}
+
+.scores-board {
+    background-color: pink;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+}
+
+.scoreName {
+    background-color: green;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.scoreName h2,
+.scoreResult h2 {
+    align-self: center;
+}
+
+
+.scoreResult {
+    background-color: cornflowerblue;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .scores-buttons #clear,
