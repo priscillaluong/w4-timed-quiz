@@ -16,8 +16,8 @@ var scoreResult = document.querySelector(".end-container .message");
 var highscoreName = document.querySelector(".end-container #name");
 var submitBtn = document.querySelector(".end-container #submit-btn");
 
-var scoresBoardName = document.querySelector(".scores-board .scoreName");
-var scoresBoardResult = document.querySelector(".scores-board .scoreResult");
+var scoresBoardName = document.getElementById("saved-name");
+var scoresBoardResult = document.getElementById("saved-result");
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -147,6 +147,7 @@ for (var i = 0; optionsBtn.length; i++)
         quizContainer.setAttribute("style",  "display: none");
         endContainer.setAttribute("style",  "display: flex");
         clearInterval(timeInterval);
+        timerCountdown.textContent = "Time left: --";
         scoreResult.textContent = "Your final score is: " + timeLeft;
         saveHighscore();
       };
@@ -159,17 +160,28 @@ for (var i = 0; optionsBtn.length; i++)
 function saveHighscore() {
   // if submit button clicked
   submitBtn.addEventListener("click", function() {
+  event.preventDefault();
+
   localStorage.setItem("latestScore", timeLeft);
   localStorage.setItem("latestName", highscoreName.value);
   var savedScore = localStorage.getItem("latestScore");
   var savedName = localStorage.getItem("latestName");
+
   console.log(highscoreName.value);
-  if (highscoreName.value = "") {
+
+  if (highscoreName.value = null) {
     console.log("Please enter name");
   } else {
     console.log(savedName + savedScore);
-    scoresBoardName.textContent = savedName;
-    scoresBoardResult.textContent = savedScore;
+
+    var liName = document.createElement("li");
+    liName.textContent = savedName;
+
+    var liScore = document.createElement("li");
+    liScore.textContent = savedScore;
+
+    scoresBoardResult.appendChild(liScore);
+    scoresBoardName.appendChild(liName);
   }
 });
 }
