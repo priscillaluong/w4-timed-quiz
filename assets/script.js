@@ -79,11 +79,23 @@ function getQuestions(index) {
   answerText4 = document.getElementById("4"); 
   var option4 = questionArr[index].options[3];
   answerText4.textContent = option4;
+
+  optionsBtn1.setAttribute("style", "background-color: none");
+  optionsBtn2.setAttribute("style", "background-color: none");
+  optionsBtn3.setAttribute("style", "background-color: none");
+  optionsBtn4.setAttribute("style", "background-color: none");
+  answerMessage.textContent = "";
+
 }
 
 //If answer is clicked, move onto the next question:
 
 var optionsBtn = document.getElementsByClassName("option");
+var optionsBtn1 = document.getElementById("1");
+var optionsBtn2 = document.getElementById("2");
+var optionsBtn3 = document.getElementById("3");
+var optionsBtn4 = document.getElementById("4");
+
 // loop through collection of elements and addEventListener doesn't
 //work through array-like objects
 
@@ -99,31 +111,34 @@ for (var i = 0; optionsBtn.length; i++)
 {
   optionsBtn[i].addEventListener('click', function() 
   {
-  var userClicked = event.target.innerText;
-  var correctAnswer = questionArr[questionsNum].answer;
+    var userClicked = event.target.innerText;
+    var correctAnswer = questionArr[questionsNum].answer;
 
-  if (userClicked === correctAnswer) 
-  {
-    answerMessage.textContent = "Correct! ✅";
-    event.target.setAttribute("style", "background-color: #5BF873");
-    console.log(event.target);
-  } else {
-    answerMessage.textContent = "Incorrect!	❌";
-    event.target.setAttribute("style", "background-color: #FC6262");
-/*     highlight(); */
-    console.log(event.target);
-  };
-
-  if (questionsNum < questionArr.length - 1) {
-    questionsNum ++;
-    getQuestions(questionsNum);
-  } else {
-    quizContainer.setAttribute("style",  "display: none");
-    endContainer.setAttribute("style",  "display: flex");
-  }
+    if (userClicked === correctAnswer) 
+    {
+      answerMessage.textContent = "Correct! ✅";
+      event.target.setAttribute("style", "background-color: #5BF873");
+      console.log(event.target);
+    } else {
+      answerMessage.textContent = "Incorrect!	❌";
+      event.target.setAttribute("style", "background-color: #FC6262");
+  /*     highlight(); */
+      console.log(event.target);
+    };
+  // when questions end, show last page 
+    setTimeout(function(){
+      if (questionsNum < questionArr.length - 1) {
+        questionsNum ++;
+        getQuestions(questionsNum);
+  
+      } else {
+        quizContainer.setAttribute("style",  "display: none");
+        endContainer.setAttribute("style",  "display: flex");
+      };
+    }, 800);
   })
 };
-event.target.setAttribute("style", "background-color: none");
+
 /* function highlight() {
   for (var i = 0; optionsBtn.length; i++) {
     if (optionsBtn[i].innerHTML === correctAnswer) {
