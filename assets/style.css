@@ -269,7 +269,7 @@ form #submit-btn:hover {
 }
 
 .scoreName {
-    background-color: green;
+/*     background-color: green; */
     width: 45%;
     height: 400px;
     display: flex;
@@ -287,13 +287,14 @@ form #submit-btn:hover {
 
 .scoreName li,
 .scoreResult li {
-    background-color: lightcoral;
+/*     background-color: lightcoral; */
     width: 100%;
+    list-style: none;
 }
 
 
 .scoreResult {
-    background-color: cornflowerblue;
+/*     background-color: cornflowerblue; */
     width: 45%;
     height: 400px;
     display: flex;

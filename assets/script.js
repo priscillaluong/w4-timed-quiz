@@ -18,6 +18,8 @@ var submitBtn = document.querySelector(".end-container #submit-btn");
 
 var scoresBoardName = document.getElementById("saved-name");
 var scoresBoardResult = document.getElementById("saved-result");
+console.log(scoresBoardResult);
+var testResult = document.getElementById("test");
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -172,27 +174,19 @@ function saveHighscore() {
   if (highscoreName.value = null) {
     console.log("Please enter name");
   } else {
-
-    var liName = document.createElement("li");
-    liName.textContent = "hello";
+    console.log("Hello it's me");
+    var liName = document.createElement("p");
+    liName.innerHTML = "hello";
   /*     liName.textContent = savedName; */
     console.log(savedName);
     
-    var liScore = document.createElement("li");
-  /*     liScore.textContent = savedScore; */
-    liScore.textContent = "test";
-    console.log(savedScore);
-    console.log(scoresBoardName);
+    var liScore = document.createElement("p");
+/*       liScore.textContent = savedScore; */
+    liScore.innerHTML = "test";
+
     console.log(scoresBoardResult);
-    
-    scoresBoardResult.appendChild(liScore);
-    scoresBoardName.appendChild(liName);
+    scoresBoardResult.append(liScore);
+    scoresBoardName.append(liName);
   }
 });
 }
-
-function renderScores() {
-
-};
-
-
