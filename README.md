@@ -21,6 +21,8 @@ Acceptance Criteria:
 * Methods such as **setInterval()** (to call a function to be executed every 1000 milliseconds, in this case, the timer countdown), **addEventListener()**, **setAttribute()**, **localstorage.getItem()**, **.setItem()** etc. were used to create a dynamic quiz that displays different content and has user interaction. 
 
 
+Code snippet:
+
 ```
 function saveHighscore() {
 
@@ -39,10 +41,6 @@ function saveHighscore() {
 }
 ```
 
-* When the user answers a question incorrectly, 8 seconds is minused from the time left.
-
-* The users highscore is the time left remaining on the clock after all questions has been answered.
-
 ## Screenshot of Deployed Application:
 
 ![Deployed Application Screenshot](/assets/images/index.png) 
@@ -51,13 +49,14 @@ function saveHighscore() {
 
 ![Question Correct Screenshot](/assets/images/correct.png)
 
+* When the user answers a question incorrectly, 8 seconds is minused from the time left.
 ![Question Incorrect Screenshot](/assets/images/incorrect.png) 
 
+* The users highscore is the time left remaining on the clock after all questions has been answered.
 ![End of Quiz Screenshot](/assets/images/end-container.png) 
 
-![Alert Screenshot](/assets/images/alert.png) 
-
 *  Users are also alerted if they try to submit a score when the name input box is left blank.
+![Alert Screenshot](/assets/images/alert.png) 
 
 ![Highscores Screenshot](/assets/images/highscores.png)
 
