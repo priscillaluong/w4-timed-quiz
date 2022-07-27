@@ -185,8 +185,8 @@ function saveHighscore() {
     liScore.innerHTML = "test";
 
     console.log(scoresBoardResult);
-    scoresBoardResult.append(liScore);
-    scoresBoardName.append(liName);
+    scoresBoardResult.appendChild(liScore);
+    scoresBoardName.appendChild(liName);
   }
 });
 }
