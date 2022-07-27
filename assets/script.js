@@ -17,7 +17,8 @@ var highscoreName = document.querySelector(".end-container #name");
 var submitBtn = document.querySelector(".end-container #submit-btn");
 
 var scoresBoardName = document.getElementById("saved-name");
-var scoresBoardResult = document.getElementById("saved-result");
+/* var scoresBoardResult = document.getElementById("saved-result"); */
+var scoresBoardResult = document.querySelector("ul");
 console.log(scoresBoardResult);
 var testResult = document.getElementById("test");
 //if Start Button Clicked, the quiz and countdown is started
@@ -120,7 +121,7 @@ var optionsBtn4 = document.getElementById("4");
 } */
 var questionsNum = 0;
 
-for (var i = 0; optionsBtn.length; i++) 
+for (var i = 0; i < optionsBtn.length; i++) 
 {
   optionsBtn[i].addEventListener('click', function() 
   {
@@ -164,29 +165,39 @@ function saveHighscore() {
   submitBtn.addEventListener("click", function() {
   event.preventDefault();
 
-  localStorage.setItem("latestScore", timeLeft);
-  localStorage.setItem("latestName", highscoreName.value);
-  var savedScore = localStorage.getItem("latestScore");
-  var savedName = localStorage.getItem("latestName");
+/*   var savedName = localStorage.getItem("latestName"); */
+  var savedScores = JSON.parse(localStorage.getItem("highscores"))|| [];
+  var presentScore = {
+    score: timeLeft,
+    name: highscoreName.value,
+  };
+  console.log(presentScore);
+  console.log(timeLeft);
+  console.log(highscoreName.value);
+  savedScores.push(presentScore);
+  localStorage.setItem("highscores", JSON.stringify(savedScores));
+
+/*   localStorage.setItem("latestScore", timeLeft);
+  localStorage.setItem("latestName", highscoreName.value); */
 
 /*   console.log(highscoreName.value); */
 
-  if (highscoreName.value = null) {
+/*   if (highscoreName.value = null) {
     console.log("Please enter name");
   } else {
     console.log("Hello it's me");
     var liName = document.createElement("p");
     liName.innerHTML = "hello";
-  /*     liName.textContent = savedName; */
-    console.log(savedName);
+/* /*   /*     liName.textContent = savedName; */
+/*     console.log(savedName);
     
     var liScore = document.createElement("p");
 /*       liScore.textContent = savedScore; */
-    liScore.innerHTML = "test";
+/*     liScore.innerHTML = "test";
 
     console.log(scoresBoardResult);
     scoresBoardResult.appendChild(liScore);
     scoresBoardName.appendChild(liName);
-  }
+  } */ 
 });
 }
