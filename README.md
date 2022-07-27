@@ -6,53 +6,64 @@ We were given a User Story and an Acceptance Criteria as per below:
 
 User Story:
 
-![User Story](./assets/images/user-story.png) 
+![User Story](/assets/images/user-story.png) 
 
 Acceptance Criteria:
 
-![Acceptance Criteria](./assets/images/acceptance-crit.png) 
+![Acceptance Criteria](/assets/images/acceptance-crit.png) 
 
 ## How I approached the task:
 
-* 
+* I started by building the static elements of the quiz within HTML and CSS, ensuring that the code follows a semantic structure. 
+
+* Once the above was satisfied, I used DOM selectors to target certain elements within *index.html*.
+
+* Methods such as **setInterval()** (to call a function to be executed every 1000 milliseconds, in this case, the timer countdown), **addEventListener()**, **setAttribute()**, **localstorage.getItem()**, **.setItem()** etc. were used to create a dynamic quiz that displays different content and has user interaction. 
+
 
 ```
+function saveHighscore() {
 
-```
+  // if submit button clicked, save score 
+  submitBtn.addEventListener("click", function() {
+  event.preventDefault();
 
-* 
-
-```
-
-...
+  var savedScores = JSON.parse(localStorage.getItem("highscores")) || [];
+  var presentScore = {
+    score: timeLeft,
+    name: highscoreName.value,
+  };
+  savedScores.push(presentScore);
+  localStorage.setItem("highscores", JSON.stringify(savedScores));
+});
 }
 ```
 
-* In between these steps, I also ran **console.log()** to ensure I am getting the result required.
+* When the user answers a question incorrectly, 8 seconds is minused from the time left.
+
+* The users highscore is the time left remaining on the clock after all questions has been answered.
 
 ## Screenshot of Deployed Application:
 
-![Deployed Application Screenshot](./assets/deployed_app.png) 
+![Deployed Application Screenshot](/assets/images/index.png) 
 
 ## Screenshot of Application Interaction:
 
-![Application Prompt Screenshot](./assets/length.png) 
+![Question Correct Screenshot](/assets/images/correct.png)
 
-Re-prompt if (pwLength < 8 || pwLength > 130):
+![Question Incorrect Screenshot](/assets/images/incorrect.png) 
 
-![Application Password Length Re-prompt Screenshot](./assets/length_reprompt.png) 
+![End of Quiz Screenshot](/assets/images/end-container.png) 
 
-![Application Numbers Confirm Screenshot](./assets/num.png) 
+![Alert Screenshot](/assets/images/alert.png) 
 
-![Application Letters Confirm Screenshot](./assets/letters.png) 
+*  Users are also alerted if they try to submit a score when the name input box is left blank.
 
-n.b. Users are also asked to confirm uppercase letters and special characters, once all methods are satisfied, a password is generated in the #password text area. If no character types are confirmed, the user is alerted to retry.
-
-![Generated Password Screenshot](./assets/generated.png) 
+![Highscores Screenshot](/assets/images/highscores.png)
 
 ## URL to Deployed Application:
 
-[Click here](https://priscillaluong.github.io/w3-password-generator/) 
+[Click here](https://priscillaluong.github.io/w4-timed-quiz/) 
 
 ### Final note:
 

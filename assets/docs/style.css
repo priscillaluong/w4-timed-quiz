@@ -261,7 +261,7 @@ form #submit-btn:hover {
 .scores-board {
     background-color: darkblue;
     box-shadow: 3px 3px 10px #888888;
-    height: 500px;
+    height: 460px;
     width: inherit;
     display: flex;
     flex-direction: row;
