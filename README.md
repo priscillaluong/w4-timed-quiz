@@ -49,13 +49,16 @@ function saveHighscore() {
 
 ![Question Correct Screenshot](/assets/images/correct.png)
 
-* When the user answers a question incorrectly, 8 seconds is minused from the time left.
+When the user answers a question incorrectly, 8 seconds is minused from the time left.
+
 ![Question Incorrect Screenshot](/assets/images/incorrect.png) 
 
-* The users highscore is the time left remaining on the clock after all questions has been answered.
+The users highscore is the time left remaining on the clock after all questions has been answered.
+
 ![End of Quiz Screenshot](/assets/images/end-container.png) 
 
-*  Users are also alerted if they try to submit a score when the name input box is left blank.
+Users are also alerted if they try to submit a score when the name input box is left blank.
+
 ![Alert Screenshot](/assets/images/alert.png) 
 
 ![Highscores Screenshot](/assets/images/highscores.png)
