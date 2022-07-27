@@ -255,11 +255,13 @@ form #submit-btn:hover {
 }
 
 .scores-container p {
-    padding: 0 80px 20px 80px;
+    padding: 0 80px 30px 80px;
 }
 
 .scores-board {
-/*     background-color: pink; */
+    background-color: darkblue;
+    box-shadow: 3px 3px 10px #888888;
+    height: 500px;
     width: inherit;
     display: flex;
     flex-direction: row;
@@ -280,9 +282,16 @@ form #submit-btn:hover {
 
 .scoreName h2,
 .scoreResult h2 {
-    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightblue;
     width: 100%;
     text-align: center;
+    color: white;
+}
+
+.scoreName ol,
+.scoreResult ul {
+    padding-top: 10px;
 }
 
 .scoreName li,
@@ -290,8 +299,9 @@ form #submit-btn:hover {
 /*     background-color: lightcoral; */
     width: 100%;
     list-style: none;
+    color: white;
+    padding: 3px 10px;
 }
-
 
 .scoreResult {
 /*     background-color: cornflowerblue; */
@@ -303,8 +313,13 @@ form #submit-btn:hover {
     justify-content: flex-start;
 }
 
+.scores-buttons {
+    margin-top: 40px;
+}
+
 .scores-buttons #clear,
 .scores-buttons #toHomebtn {
+    margin: 0px 10px;
     font-size: 18px;
     font-weight: 500;
     padding: 12px 30px;

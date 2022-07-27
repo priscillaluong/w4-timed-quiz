@@ -150,14 +150,6 @@ function saveHighscore() {
   submitBtn.addEventListener("click", function() {
   event.preventDefault();
 
-/*   if (!highscoreName.value) {
-    window.alert("Name cannot be blank. Please try again.");
-  }
-
-  var messageEl = document.createElement("p");
-  messageEl.textContent = "Thanks " + highscoreName.value + "! Your highscore has been submitted.";
-  submitMessage.appendChild(messageEl); */
-
   var savedScores = JSON.parse(localStorage.getItem("highscores"))|| [];
   var presentScore = {
     score: timeLeft,
