@@ -16,11 +16,6 @@ var scoreResult = document.querySelector(".end-container .message");
 var highscoreName = document.querySelector(".end-container #name");
 var submitBtn = document.querySelector(".end-container #submit-btn");
 
-var scoresBoardName = document.getElementById("saved-name");
-/* var scoresBoardResult = document.getElementById("saved-result"); */
-var scoresBoardResult = document.querySelector("ul");
-console.log(scoresBoardResult);
-var testResult = document.getElementById("test");
 //if Start Button Clicked, the quiz and countdown is started
 
 startBtn.addEventListener("click", function() {
@@ -58,17 +53,7 @@ function displayMessage() {
 }
 
 
-
-
-
-// HIGHSCORES - can we refer to the increment decrement activity to code this?
-
-//if ()
-
-
-
-// we may need to use this to carry out another function after a form has been submitted. E.g. print amount
-//event.preventDefault();
+// HIGHSCORES
 
 // put each question into an array so we can go through the q's with an index
 // Getting questions and answers from array 
@@ -165,39 +150,26 @@ function saveHighscore() {
   submitBtn.addEventListener("click", function() {
   event.preventDefault();
 
-/*   var savedName = localStorage.getItem("latestName"); */
+/*   if (!highscoreName.value) {
+    window.alert("Name cannot be blank. Please try again.");
+  }
+
+  var messageEl = document.createElement("p");
+  messageEl.textContent = "Thanks " + highscoreName.value + "! Your highscore has been submitted.";
+  submitMessage.appendChild(messageEl); */
+
   var savedScores = JSON.parse(localStorage.getItem("highscores"))|| [];
   var presentScore = {
     score: timeLeft,
     name: highscoreName.value,
   };
-  console.log(presentScore);
-  console.log(timeLeft);
-  console.log(highscoreName.value);
   savedScores.push(presentScore);
   localStorage.setItem("highscores", JSON.stringify(savedScores));
 
-/*   localStorage.setItem("latestScore", timeLeft);
-  localStorage.setItem("latestName", highscoreName.value); */
-
-/*   console.log(highscoreName.value); */
-
-/*   if (highscoreName.value = null) {
-    console.log("Please enter name");
+  if (!highscoreName.value) {
+    window.alert("Name cannot be blank. Please try again.");
   } else {
-    console.log("Hello it's me");
-    var liName = document.createElement("p");
-    liName.innerHTML = "hello";
-/* /*   /*     liName.textContent = savedName; */
-/*     console.log(savedName);
-    
-    var liScore = document.createElement("p");
-/*       liScore.textContent = savedScore; */
-/*     liScore.innerHTML = "test";
-
-    console.log(scoresBoardResult);
-    scoresBoardResult.appendChild(liScore);
-    scoresBoardName.appendChild(liName);
-  } */ 
+    window.alert("Thanks " + highscoreName.value + "! Your highscore has been submitted!");
+  };
 });
 }

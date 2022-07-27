@@ -7,10 +7,17 @@ savedScores.sort(function(a, b) {
 });
 
 for (var i = 0; i < savedScores.length; i++) {
-    var liEl = document.createElement("li");
-    liEl.textContent = savedScores[i].name + " = " + savedScores[i].score;
-    var olEl = document.getElementById("saved-result");
-    olEl.appendChild(liEl);
+    var scoreEl = document.createElement("li");
+    scoreEl.textContent = savedScores[i].score;
+    
+    var nameEl = document.createElement("li");
+    nameEl.textContent = savedScores[i].name;
+    
+    var ulEl = document.getElementById("saved-result");
+    ulEl.appendChild(scoreEl);
+
+    var olEl = document.getElementById("saved-name");
+    olEl.appendChild(nameEl);
 };
 function clearScores(){
     localStorage.removeItem("highscores");
