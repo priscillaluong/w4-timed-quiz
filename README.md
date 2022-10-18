@@ -1,8 +1,6 @@
 # w4-timed-quiz
 
-Week Four Challenge of the *UOB Full Stack Development Coding Bootcamp* requires students to use Web APIs to create a **timed multiple-choice quiz**. 
-
-We were given a User Story and an Acceptance Criteria as per below:
+An application that uses Web APIs to create a **timed multiple-choice quiz**.
 
 User Story:
 
